@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/computer_store
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  # DB migrations settings
+  liquibase:
+    change-log: db/changelog/changelog.yaml
+    contexts: main, test
+    liquibase-schema: public
+    user: postgres
+    password: postgres
